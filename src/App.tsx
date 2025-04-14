@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import PokemonCard from "./components/PokemonCard";
@@ -43,8 +43,15 @@ function App() {
   if (pokemon == null) {
     throw new Error("Invalid pokemon name");
   }
+    useEffect(
+      () => {
+        alert("hello pokemon trainer :)");
+      },
+      []
+    );
 
   return (
+    
     <div>
       <NavBar 
         pokemonList={pokemonList.map(p => p.name)}
